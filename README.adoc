@@ -1,0 +1,9 @@
+This provides a simple demo of hole filling in `tech.v3.dataset`. This works on datatables of numeric data. The basic idea is to go to every hole, for that hole's row find the nearest neighbour, copy over the value from the neighbour into the hole.
+
+There are a few subtleties to consider
+
+- You will only consider neighbours/rows that have no hole in that column themselves (otherwise you'll find a "close" row that doesn't have a value for you to fill with)
+
+- Nearness is a bit of vague term. To calculate the "distance" between two rows normally you'd use a Cartesian distance. ie find the difference between the coordinates and do Pythagoras. However the rows may have other holes and other missing values, so it was a but unclear to me how to define an L2/Cartesian norm. What I do instead is calculate a L1/Manhattan norm using all column values that are defined in both rows. In effect this means calculating the differences and summing them up (no squared value - yay). This Manhattan distance is then normalized by dividing by the number of available columns so that in effect you can compare underdefined distances. I haven't done any mathematically rigorous proof that this is kosher! And I have no idea if this introduces any kind of bias. But on a high level I don't really see any obvious issue
+
+- I tested this algorithm in an ML class on the synthetic given for the final assignment and the result did not perform well! The performance was comparable to filling the holes with each column's average. So I won't go so far as to say this method will bear fruit :) .. so Caveat Emptor
