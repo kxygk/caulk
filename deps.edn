@@ -1,0 +1,17 @@
+{:deps  {;; mine
+         kxygk/steroids             {:local/root "../steroids"}
+         kxygk/csv                  {:local/root "../csv"}
+         kxygk/geoprim              {:local/root "../geoprim"}
+         kxygk/geogrid              {:local/root "../geogrid"}
+         kxygk/geogrid2svg          {:local/root "../geogrid2svg"}
+         kxygk/geogrid4image        {:local/root "../geogrid4image"}
+         kxygk/geogrid4seq          {:local/root "../geogrid4seq"}
+         kxygk/quickthing           {:local/root "../quickthing"}
+         kxygk/geojson2svg          {:local/root "../geojson2svg"}
+         kxygk/rainusage            {:local/root "../rainusage"}
+         kxygk/svgmaps              {:local/root "../svgmaps"}
+         kxygk/ible                 {:local/root "../ible"}
+         techascent/tech.ml.dataset {:mvn/version "7.000-beta-38"}
+         org.clojure/clojure        {:mvn/version "1.11.1"}
+         org.clojure/data.csv       {:mvn/version "0.1.4"}}
+ :paths ["."]}
